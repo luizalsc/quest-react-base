@@ -1,11 +1,16 @@
-const ChangeTextColor = (color)=>{
-    console.log(color)
+const alertLabelName = (label)=>{
+    
+    alert(`A label desse botão é ${label}`)
 }
 
-const Button = ()=>{
+function Button({label}) {
     return (
-        <button className="btn" onClick={ChangeTextColor}>Transformar texto</button>
+        <button className="btn" onClick={() => alertLabelName(label)}>{label}</button>
     )
+}
+
+Button.defaultProps ={
+    label: 'Não clique!'
 }
 
 export default Button
